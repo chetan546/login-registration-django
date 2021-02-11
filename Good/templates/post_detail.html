@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1>Welcome to the Post page</h1>
+    <br>
+    <h1>Post Details:</h1>
+    <p>
+        Title: {{ post_detail.Title }}
+    </p>
+    <p>
+        Text description: {{ post_detail.Text_description }}
+    </p>
+</div>
+<div class="contsiner">
+    <p>
+        <a class='btn btn-warning' href="{% url 'app:update' pk=post_detail.pk %}">Update</a>
+    </p>
+    <p>
+        <a class="btn btn-danger" href="{% url 'app:delete' pk=post_detail.pk %}">Delete</a>
+    </p>
+</div>
+{% endblock %}
